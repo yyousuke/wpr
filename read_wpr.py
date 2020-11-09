@@ -179,7 +179,7 @@ if __name__ == '__main__':
     input_dir = args.input_dir
     output_dir = args.output_dir
     os_mkdir(output_dir) # 出力ディレクトリ作成
-    # 入力フェイル
+    # 入力ファイル名
     input_filename = "wpr" + date + "." + sta
     input_filedir = input_dir + "/" + input_filename
     # 出力ファイル名
