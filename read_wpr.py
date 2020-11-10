@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
 # 入力、出力ディレクトリ
 input_dir_default = "."
 output_dir_default = "."
-# 時刻、地点
+# 日付、地点
 wpr_date_defalut = "20190504"
 wpr_sta_defalut = "626"
 
