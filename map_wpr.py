@@ -8,10 +8,10 @@ import matplotlib as mpl
 import copy
 
 # 地点
-#sta_id = "626"
-#sta_name = "Kumagaya"
-sta_id = "674"
-sta_name = "Katsuura"
+sta_id = "626"
+sta_name = "Kumagaya"
+#sta_id = "674"
+#sta_name = "Katsuura"
 # 入力ファイル名
 input_file_dir = "data_dir." + sta_id + ".csv"
 input_file_spd = "data_spd." + sta_id + ".csv"
@@ -55,10 +55,10 @@ ax = fig.add_subplot(1, 1, 1)
 ax.set_ylim([ymin, ymax])
 
 # 矢羽を描く
-ax.invert_xaxis()
+ax.invert_xaxis() # 時間軸を右から左へ
 ax.barbs(X.flatten(), Y.flatten(), u.flatten(), v.flatten(),
-         sizes=dict(emptybarb=0.0), length=3,
-         color='k',
+         sizes=dict(emptybarb=0.0), length=2.5,
+         color='k', linewidth=0.8,
          zorder=2)
 #plt.barbs(X.flatten()[::8], Y.flatten()[::8], u.flatten()[::8], v.flatten()[::8],
 #          sizes=dict(emptybarb=0.0, width=0.1), length=4, color='k')
@@ -66,7 +66,8 @@ ax.barbs(X.flatten(), Y.flatten(), u.flatten(), v.flatten(),
 ax.set_ylabel("Height (m)", fontsize=14)
 
 # 鉛直速度を描く
-opt_scatter = True
+#opt_scatter = True
+opt_scatter = False
 if opt_scatter: # 散布図のマーカー
     cmap = copy.copy(mpl.cm.get_cmap("coolwarm"))
     cs = ax.scatter(X.flatten(), Y.flatten(), c=w.flatten(),
@@ -75,14 +76,17 @@ if opt_scatter: # 散布図のマーカー
                     cmap=cmap,
                     zorder=1)
 else: # 陰影
-    cmap = copy.copy(mpl.cm.get_cmap("bwr"))
+    #cmap = copy.copy(mpl.cm.get_cmap("bwr"))
+    cmap = copy.copy(mpl.cm.get_cmap("coolwarm"))
     cmap.set_over('r')
     cmap.set_under('b')
     cs = ax.contourf(X, Y, w, 
-                    levels=[-4, -2, 0, 2, 4],
+                    levels=[-4, -3, -2, -1, 0, 1, 2, 3, 4],
                     vmin=-4, vmax=4, 
                     cmap=cmap, extend='both',
+                    corner_mask=False,
                     zorder=1)
+# levels=[-4, -2, 0, 2, 4],
 # カラーバー
 cbar = fig.colorbar(cs, orientation='vertical')
 cbar.set_label("Vertical velocity (m/s)", fontsize=12)
