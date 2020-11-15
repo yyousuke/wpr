@@ -19,6 +19,8 @@ Station numberはwpr_sta.csv
 
 2. map_wpr.py
 matplotlibを使い作図する
+地点番号（sta_id)をread_wpr.pyで書き出した地点に合わせ、作図時に表示される地点名（sta_name）やタイトル（title）を適切に書き換える。
 
+＊Google colaboratoryを用いて、上記の解析・作図を行う方法をhttp://ebcrpa.jamstec.go.jp/~yyousuke/matplotlib/wpr_colab.htmlに載せた。
 
 作成者：山下陽介（国立環境研究所）
