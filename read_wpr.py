@@ -181,12 +181,14 @@ if __name__ == '__main__':
     os_mkdir(output_dir) # 出力ディレクトリ作成
     # 入力ファイル名
     input_filename = "wpr" + date + "." + sta
-    input_filedir = input_dir + "/" + input_filename
+    input_filedir = os.path.join(input_dir, input_filename)
     # 出力ファイル名
-    output_filedir_qua = output_dir + "/data_qua." + sta + ".csv"
-    output_filedir_dir = output_dir + "/data_dir." + sta + ".csv"
-    output_filedir_spd = output_dir + "/data_spd." + sta + ".csv"
-    output_filedir_w = output_dir + "/data_w." + sta + ".csv"
+    output_filedir_qua = os.path.join(output_dir, "data_qua." + sta + ".csv")
+    output_filedir_dir = os.path.join(output_dir, "data_dir." + sta + ".csv")
+    output_filedir_spd = os.path.join(output_dir, "data_spd." + sta + ".csv")
+    output_filedir_w = os.path.join(output_dir, "data_w." + sta + ".csv")
+    output_filedir_height =  os.path.join(output_dir, "data_height." + sta + ".csv")
+    output_filedir_time = os.path.join(output_dir, "data_time." + sta + ".csv")
 
     # ReadWPR Classの初期化
     wpr = ReadWPR(input_filedir)
@@ -194,8 +196,8 @@ if __name__ == '__main__':
     nmax, tindex, data = wpr.retrieve()
 
     # 時刻データ書き出し
-    pd.Series(data[nmax,:,0]).to_csv('height.csv', header=None)
-    pd.Series(np.ravel(tindex)).to_csv('time.csv', header=None)
+    pd.Series(data[nmax,:,0]).to_csv(output_filedir_height, header=None)
+    pd.Series(np.ravel(tindex)).to_csv(output_filedir_time, header=None)
     # 時間ー高度面のデータ書き出し
     data_qua = pd.DataFrame(data[:,:,1], index=tindex, columns=data[nmax,:,0])
     data_dir = pd.DataFrame(data[:,:,2], index=tindex, columns=data[nmax,:,0])
