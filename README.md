@@ -6,27 +6,30 @@
 
 ウインドプロファイラデータを読み込み、csvファイルを書き出す
 
-使用法：
+**使用法**：
 
 ./read_wpr.py 
 
-  -h, --help            show this help message and exit
+  -h, --help show this help message and exit
 
-  --wpr_date <wpr_date>
+  --wpr_date <wpr_date> 
 
-                        Date; yyyymmdd
+  --wpr_sta <wpr_sta>  
 
-  --wpr_sta <wpr_sta>   Station number
+  --input_dir <input_dir> 
 
-  --input_dir <input_dir>
+  --output_dir <output_dir> 
 
-                        Path of input directory
+- **時刻**  --wpr_date 6桁の番号(yyyymmdd)
 
-  --output_dir <output_dir>
+- **地点番号**（Station number）：--wpr_sta 5桁の番号
 
-                        Path of output directory
+＊地点番号は、wpr_sta.csv参照
 
-＊Station numberはwpr_sta.csv参照
+- **入力ディレクトリへのパス**： --input_dir 
+
+- **出力ディレクトリへのパス**： --output_dir
+
 
 ## 2. map_wpr.py
 
