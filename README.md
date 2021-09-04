@@ -26,11 +26,11 @@
 
 ### オプション
 
-- **-h |  --help**： ヘルプメッセージを表示し終了（show this help message and exit）
+- **-h |  --help**： ヘルプメッセージを表示し終了（show help message and exit）
 
-- **--wpr_date** <wpr_date> ：取得する日付を6桁の番号で（Date; yyyymmdd）
+- **--wpr_date** <wpr_date> ：日付を6桁の番号で（6-digit date; yyyymmdd）
 
-    例：2019年5月4日：--wpr_date 20190504
+    例：2019年5月4日のデータを変換する：--wpr_date 20190504
 
 - **--wpr_sta** <wpr_sta> ：3桁の地点番号（3-digit station number）
 
@@ -41,11 +41,6 @@
 - **--input_dir** <input_dir> ：入力ディレクトリへのパス（path of input directory）
 
 - **--output_dir** <output_dir> ：出力ディレクトリへのパス（path of output directory）
-
-- **時刻**  --wpr_date 6桁の番号(yyyymmdd)
-
-- **地点番号**（Station number）：--wpr_sta 5桁の番号
-
 
 ## 2. map_wpr.py
 
