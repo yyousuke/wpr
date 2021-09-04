@@ -8,7 +8,7 @@
 
 - **使用法**：
 
-% ./read_wpr.py オプション
+    % ./read_wpr.py オプション
 
 - **出力**：output_dir以下に出力される
 
@@ -36,6 +36,8 @@
 
     地点番号は、wpr_sta.csv参照
 
+    例：熊谷：--wpr_sta 626
+
 - **--input_dir** <input_dir> ：入力ディレクトリへのパス（path of input directory）
 
 - **--output_dir** <output_dir> ：出力ディレクトリへのパス（path of output directory）
@@ -61,6 +63,6 @@ matplotlibを使い作図する
 
 ## 備考
 
-Google colaboratoryを用いて、上記の解析・作図を行う方法を https://yyousuke.github.io/matplotlib/wpr_colab.html に載せた。
+Google colaboratoryを用いて、上記の解析・作図を行う方法を [https://yyousuke.github.io/matplotlib/wpr_colab.html](https://yyousuke.github.io/matplotlib/wpr_colab.html)に載せた。
 
 作成者：山下陽介（国立環境研究所）
