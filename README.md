@@ -28,7 +28,7 @@
 
 - **-h |  --help**： ヘルプメッセージを表示し終了（show help message and exit）
 
-- **--wpr_date** <wpr_date> ：日付を6桁の番号で（6-digit date; yyyymmdd）
+- **--wpr_date** <wpr_date> ：日付を8桁の番号で（8-digit date; yyyymmdd）
 
     例：2019年5月4日のデータを変換する：--wpr_date 20190504
 
